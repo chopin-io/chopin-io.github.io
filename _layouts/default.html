@@ -1,15 +1,66 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+{% include head.html %}
 
-  {% include head.html %}
-
-  <body>
-
-    {% include sidebar.html %}
-
-    <div class="content container">
-      {{ content }}
+<header class="Header" style="background-color: {{ page.color }}">
+  <nav class="Header__Nav">
+    <div class="container">
+      <div class="row">
+        <h1 class="three columns Header__Nav__Logo">
+          <a href="#">CHOPIN</a>
+        </h1>
+        <ul class="nine columns Header__Nav__List">
+          <li>
+            <a href="#">
+              Articles
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Tutoriels
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Formations
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <section class="container Header__Section">
+    <a href="#" class="Header__Section__Category">
+      {{ page.categories[1] || page.categories[0] }}
+    </a>
+    <div class="Header__Section__Image">
+      <img src="https://cdn.auth0.com/blog/angular/logo.png" alt="Logo Article" />
+    </div>
+    <h1>
+      {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    </h1>
+    <h2>
+      {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+    </h2>
+    <div class="row Header__Section__Infos">
+      <div class="four columns Header__Section__Infos__Author">
+        Author
+      </div>
+      <div class="four columns Header__Section__Infos__Date">
+        {{ page.date | date: "%-d %b, %Y" }}
+      </div>
+      <div class="four columns Header__Section__Infos__Share">
+        Social Sharing
+      </div>
+    </div>
+  </section>
+</header>
 
-  </body>
-</html>
+<main class="Main container">
+  {{ content }}
+</main>
+
+<footer>
+
+</footer>
+
+
+{% include footer.html %}

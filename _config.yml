@@ -1,8 +1,15 @@
-excerpt_separator: ""
-pygments: true
+# Site settings
+title: "Chopin IO"
+email: "contact@chopin.io"
+description: "Articles, tutoriels et formations de programmation informatique orientés web."
+lang: fr
+author: "contact@chopin.io"
+baseurl: "" # Need to be erase after DNS has been set
+url: "alexchopin.github.io" # Replace it by kardigan.no
+google_analytics:
+permalink: /:categories/:title/
+
+# Build settings
 markdown: kramdown
-url: http://alexchopin.github.io
-title: Alexandre Chopin
-tagline: A log of everyday life
-description: My awesome new site
-paginate: 5
+sass:
+    style: compressed

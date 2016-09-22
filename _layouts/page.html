@@ -1,8 +1,23 @@
----
-layout: default
----
+{% include head.html %}
 
-<div class="page">
-  <h1 class="page-title">{{ page.title }}</h1>
-  {{ content }}
-</div>
+<section>
+  <nav>
+
+  </nav>
+  <header>
+    <!-- <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"> -->
+
+  </header>
+</section>
+
+<main>
+  {{ content }}    
+</main>
+
+<footer>
+
+</footer>
+
+
+{% include footer.html %}
