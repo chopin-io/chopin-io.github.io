@@ -31,7 +31,9 @@
         </div>
         <div class="four columns Post__Header__Infos__Author">
           <div class="Post__Header__Infos__Author__Block">
-            <img src="{{ site.authors[page.author].email | to_gravatar }}?s=32" alt="Author photo" />
+            {% if site.authors[page.author].avatar %}
+              <img src="{{ site.authors[page.author].avatar }}?s=32" alt="Author photo" />
+            {% endif %}
             <a href="/auteurs/{{ page.author }}" itemprop="author">
               {{ site.authors[page.author].name }}
             </a>
