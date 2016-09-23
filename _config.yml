@@ -1,15 +1,32 @@
+#Global settings
+permalink: /:categories/:title/
+
 # Site settings
-title: "Chopin IO"
-email: "contact@chopin.io"
-description: "Articles, tutoriels et formations de programmation informatique orientés web."
 lang: fr
-author: "contact@chopin.io"
+title: "Chopin IO"
+description: "Articles, tutoriels et formations de programmation informatique orientés web."
 baseurl: "" # Need to be erase after DNS has been set
 url: "alexchopin.github.io" # Replace it by kardigan.no
+
+# Other settings
+authors:
+  alex:
+    pseudo: "Alexandre"
+    name: "Alexandre CHOPIN"
+    email: "alex@chopin.io"
+  seb:
+    pseudo: "Atinux"
+    name: "Sébastien CHOPIN"
+    email: "seb@chopin.io"
+
+# External Services settings
 google_analytics:
-permalink: /:categories/:title/
 
 # Build settings
 markdown: kramdown
 sass:
     style: compressed
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-gravatar

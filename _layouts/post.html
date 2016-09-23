@@ -1,25 +1,55 @@
 {% include head.html %}
 
-<section>
-  <nav>
+{% include nav.html %}
 
-  </nav>
-  <header>
-    <!-- <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"> -->
-
+<article class="Post">
+  <header class="Post__Header" {% if page.color %} style="background-color: #{{ page.color }}"{% endif %}>
+    <div class="container">
+      {% if page.logo %}
+      <div class="Post__Header__Image">
+        <img src="{{ page.logo }}" alt="Logo Article" />
+      </div>
+      {% endif %}
+      {% if page.title %}
+      <h1>
+        {{ page.title }}
+      </h1>
+      {% endif %}
+      {% if page.description %}
+      <h2>
+        {{ page.description }}
+      </h2>
+      {% endif %}
+      <div class="row Post__Header__Infos">
+        <div class="four columns Post__Header__Infos__Share">
+          {% if page.categories %}
+          <a href="/{{ page.categories | join: '/' }}">
+            {{ page.categories | first }} : {{ page.categories | last }}
+          </a>
+          {% endif %}
+        </div>
+        <div class="four columns Post__Header__Infos__Author">
+          <div class="Post__Header__Infos__Author__Block">
+            <img src="{{ site.authors[page.author].email | to_gravatar }}?s=32" alt="Author photo" />
+            <a href="/auteurs/{{ page.author }}">
+              {{ site.authors[page.author].name }}
+            </a>
+          </div>
+        </div>
+        <div class="four columns Post__Header__Infos__Date">
+          {{ page.date | date: "%-d %b, %Y" }}
+        </div>
+      </div>
+    </div>
   </header>
-</section>
+  <section class="Post__Content">
+    <main class="container">
+      {{ content }}
+    </main>
+  </section>
+  <footer class="Post__Footer">
 
-<main>
-  <article>
-    {{ content }}
-  </article>
-</main>
-
-<footer>
-
-</footer>
-
+  </footer>
+</article>
 
 {% include footer.html %}

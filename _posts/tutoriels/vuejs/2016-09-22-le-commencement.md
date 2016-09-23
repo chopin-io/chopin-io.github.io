@@ -1,14 +1,16 @@
 ---
-layout: default
+layout: post
 title: Le commencement
 description: Découverte du framework VueJS
+author: alex
+logo: https://cdn.auth0.com/blog/vuejs/vue-logo.png
 categories:
   - tutoriels
   - vuejs
 ---
 C'est parti, vous avez décidé de vous mettre à `vue.js`, ou vous êtes juste curieux d'en savoir plus, ça tombe bien, je vais tenter de vous expliquer ce que c'est et comment l'utiliser rapidement !
 
-## Qu'est-ce Vue.js ?
+### Qu'est-ce Vue.js ?
 
 Vue.js est une librairie JavaScript créé par [Evan You](https://github.com/yyx990803) et permet de créer des applications web facilement.
 
@@ -16,7 +18,7 @@ Site internet officiel : [http://vuejs.org/](http://vuejs.org/)
 
 Vue.js se veut simple d'utilisation et rapide à prendre en main, pour cela, rien de mieux qu'un exemple !
 
-## Installation (Basique)
+### Installation (Basique)
 
 Comme toute librairie JS, on va l'intégrer dans notre code HTML avec la balise `<script>` (dans le header ou footer, ça c'est vous qui décidez !) :
 
