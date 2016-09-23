@@ -2,7 +2,8 @@
 
 {% include nav.html %}
 
-<article class="Post">
+<article class="Post" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="{{ page.url | prepend: site.url }}">
   <header class="Post__Header" {% if page.color %} style="background-color: #{{ page.color }}"{% endif %}>
     <div class="container">
       {% if page.logo %}
@@ -11,12 +12,12 @@
       </div>
       {% endif %}
       {% if page.title %}
-      <h1>
+      <h1 itemprop="headline">
         {{ page.title }}
       </h1>
       {% endif %}
       {% if page.description %}
-      <h2>
+      <h2 itemprop="description">
         {{ page.description }}
       </h2>
       {% endif %}
@@ -31,19 +32,20 @@
         <div class="four columns Post__Header__Infos__Author">
           <div class="Post__Header__Infos__Author__Block">
             <img src="{{ site.authors[page.author].email | to_gravatar }}?s=32" alt="Author photo" />
-            <a href="/auteurs/{{ page.author }}">
+            <a href="/auteurs/{{ page.author }}" itemprop="author">
               {{ site.authors[page.author].name }}
             </a>
           </div>
         </div>
         <div class="four columns Post__Header__Infos__Date">
-          {{ page.date | date: "%-d %b, %Y" }}
+          <meta itemprop="datePublished" content="{{ page.date }}">
+          <time datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%-d %B, %Y" }}</time>
         </div>
       </div>
     </div>
   </header>
   <section class="Post__Content">
-    <main class="container">
+    <main class="container" itemprop="articleBody">
       {{ content }}
     </main>
   </section>
