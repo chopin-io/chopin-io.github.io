@@ -1,66 +1,33 @@
 {% include head.html %}
-<!-- 
-<header class="Header" style="background-color: {{ page.color }}">
-  <nav class="Header__Nav">
+
+{% include nav.html %}
+
+<section class="Default" itemscope itemtype="http://schema.org/WPHeader">
+  <link itemprop="mainEntityOfPage" href="{{ page.url | prepend: site.url }}">
+  <header class="Banner" {% if page.color %} style="background-color: #{{ page.color }}"{% endif %}>
     <div class="container">
-      <div class="row">
-        <h1 class="three columns Header__Nav__Logo">
-          <a href="#">CHOPIN</a>
-        </h1>
-        <ul class="nine columns Header__Nav__List">
-          <li>
-            <a href="#">
-              Articles
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Tutoriels
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Formations
-            </a>
-          </li>
-        </ul>
+      {% if page.logo %}
+      <div class="Banner__Image">
+        <img src="{{ page.logo }}" alt="Logo Article" />
       </div>
+      {% endif %}
+      {% if page.title %}
+      <h1 itemprop="headline">
+        {{ page.title }}
+      </h1>
+      {% endif %}
+      {% if page.description %}
+      <h2 itemprop="description">
+        {{ page.description }}
+      </h2>
+      {% endif %}
     </div>
-  </nav>
-  <section class="container Header__Section">
-    <a href="#" class="Header__Section__Category">
-      {{ page.categories[1] || page.categories[0] }}
-    </a>
-    <div class="Header__Section__Image">
-      <img src="https://cdn.auth0.com/blog/angular/logo.png" alt="Logo Article" />
-    </div>
-    <h1>
-      {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
-    </h1>
-    <h5>
-      {% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
-    </h5>
-    <div class="row Header__Section__Infos">
-      <div class="four columns Header__Section__Infos__Author">
-        Author
-      </div>
-      <div class="four columns Header__Section__Infos__Date">
-        {{ page.date | date: "%-d %b, %Y" }}
-      </div>
-      <div class="four columns Header__Section__Infos__Share">
-        Social Sharing
-      </div>
-    </div>
+  </header>
+  <section class="Default__Posts">
+    <main class="container">
+      {{ content }}
+    </main>
   </section>
-</header>
-
-<main class="Main container">
-  {{ content }}
-</main> -->
-
-<footer>
-
-</footer>
-
+</section>
 
 {% include footer.html %}

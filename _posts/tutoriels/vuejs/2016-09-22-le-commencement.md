@@ -2,7 +2,7 @@
 layout: post
 title: Le commencement
 description: Découverte du framework VueJS
-author: alex
+author: seb
 logo: https://cdn.auth0.com/blog/vuejs/vue-logo.png
 categories:
   - tutoriels

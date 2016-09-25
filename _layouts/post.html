@@ -4,10 +4,10 @@
 
 <article class="Post" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
   <link itemprop="mainEntityOfPage" href="{{ page.url | prepend: site.url }}">
-  <header class="Post__Header" {% if page.color %} style="background-color: #{{ page.color }}"{% endif %}>
+  <header class="Banner" {% if page.color %} style="background-color: #{{ page.color }}"{% endif %}>
     <div class="container">
       {% if page.logo %}
-      <div class="Post__Header__Image">
+      <div class="Banner__Image">
         <img src="{{ page.logo }}" alt="Logo Article" />
       </div>
       {% endif %}
@@ -21,16 +21,16 @@
         {{ page.description }}
       </h2>
       {% endif %}
-      <div class="row Post__Header__Infos">
-        <div class="four columns Post__Header__Infos__Share">
+      <div class="row Banner__Infos">
+        <div class="four columns Banner__Infos__Share">
           {% if page.categories %}
           <a href="/{{ page.categories | join: '/' }}">
-            {{ page.categories | first }} : {{ page.categories | last }}
+            {{ page.categories | last }}
           </a>
           {% endif %}
         </div>
-        <div class="four columns Post__Header__Infos__Author">
-          <div class="Post__Header__Infos__Author__Block">
+        <div class="four columns Banner__Infos__Author">
+          <div class="Banner__Infos__Author__Block">
             {% if site.authors[page.author].avatar %}
               <img src="{{ site.authors[page.author].avatar }}?s=32" alt="Author photo" />
             {% endif %}
@@ -39,7 +39,7 @@
             </a>
           </div>
         </div>
-        <div class="four columns Post__Header__Infos__Date">
+        <div class="four columns Banner__Infos__Date">
           <meta itemprop="datePublished" content="{{ page.date }}">
           <time datetime="{{ page.date | date: "%F" }}">{{ page.date | date: "%-d %B, %Y" }}</time>
         </div>
@@ -51,6 +51,7 @@
       {{ content }}
     </main>
   </section>
+  {% if page.previous || page.next %}
   <footer class="Post__Footer">
     <div class="container">
       <div class="six columns">
@@ -69,6 +70,7 @@
       </div>
     </div>
   </footer>
+  {% endif %}
 </article>
 
 {% include footer.html %}
