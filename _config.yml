@@ -6,7 +6,7 @@ lang: fr
 title: "Chopin IO"
 description: "Articles, tutoriels et formations de programmation informatique orientés web."
 baseurl: "" # Need to be erase after DNS has been set
-url: "alexchopin.github.io" # Replace it by kardigan.no
+url: "chopin-io.github.io" # Replace it by kardigan.no
 
 # Other settings
 authors:
